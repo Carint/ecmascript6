@@ -91,3 +91,57 @@ const a = 'b'
 console.log(globalVar)  // Se puede llamar fuera del scope de la declaracion
 // console.log(globalLet) // No se puede llamar fuera del scop de la declaracion
 
+// PARAMETROS DE OBJETOS MEJORADO
+// --------------------------------------------------------------------
+let marca = 'toyota'
+let year = 2006
+
+// ES5
+obj = { marca: marca, year: year }
+
+// ES6
+obj2 = { marca, year }
+
+console.log(obj)
+console.log(obj2)
+
+// ARROW FUNCTIONS
+// --------------------------------------------------------------------
+const cars = [
+    { marca: 'toyota', year: 2006 },
+    { marca: 'nissan', year: 2007 }  
+]
+
+// ES5
+let listOfCars = cars.map(function (item) {
+    console.log(item.marca)
+})
+
+let listOfCars2 = cars.map(item => console.log(item.marca))
+
+const listOfCars3 = (marca, year) => {
+    // FUNCIONALIDAD NECESARIA
+}
+
+const listOfCars4 = year => {
+    // FUNCIONALIDAD NECESARIA
+}
+
+const square = num => num * num
+
+// PROMESAS
+// --------------------------------------------------------------------
+const helloPromise = () => {
+    return new Promise((resolve, reject) => {
+        if (true) {
+            resolve('Verdadero')
+        } else {
+            reject('Falso')
+        }
+    })
+}
+
+helloPromise()
+    .then(response => console.log(response))
+    .then(() => console.log('Hola'))
+    .catch(error => console.log(error))
